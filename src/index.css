@@ -1,13 +1,240 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
+*root {
+	margin: 0;
+	padding: 0;
+}
 body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+	background: #fff;
+	font-family: 'Montserrat', sans-serif;
+	color: #222;
+	font-weight: 300;
+}
+.wrapper {
+	margin: 50px auto;
+	margin: 10%;
+	margin-top: 0;
+}
+header {
+	position: relative;
+}
+header .logo {
+	font-weight: 600;
+	font-size: 20px;
+}
+header .header-container {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+header ul.nav {
+	float: right;
+	list-style: none;
+	font-size: 20px;
+}
+header ul.nav li {
+	display: inline;
+	margin-left: 25px;
+	cursor: pointer;
+	transition: opacity 500ms ease;
+}
+header ul.nav li:hover {
+	opacity: 0.5;
+}
+header .shop-cart-button {
+	cursor: pointer;
+	transition: color, transform 500ms ease;
+}
+header .shop-cart-button:hover,
+header .shop-cart-button.active {
+	color: #dc3d3d;
+	transform: scale(1.5);
+}
+header .shop-cart {
+	position: absolute;
+	top: 43px;
+	right: 0;
+	width: 450px;
+	background: #fafafa;
+	box-shadow: -5px -5px 5px -5px rgba(34, 60, 80, 0.6) inset;
+	z-index: 2;
+	padding: 20px;
+	padding-bottom: 0;
+}
+header .shop-cart .item .empty h2 {
+	font-size: 20px;
+	margin-bottom: 20px;
+}
+
+header .shop-cart .item {
+	width: 100%;
+	float: left;
+	margin-bottom: 20px;
+}
+header .shop-cart .item img {
+	width: 70px;
+	float: left;
+	margin-right: 20px;
+}
+header .shop-cart .item h2 {
+	font-size: 20px;
+	margin-bottom: 10px;
+}
+header .shop-cart .item p {
+	color: #797979;
+	font-weight: 600;
+}
+header .shop-cart .item .delete-icon {
+	color: #ca5252;
+	float: right;
+	font-weight: 800;
+	position: relative;
+	top: -25px;
+	cursor: pointer;
+	transition: color, transform 500ms ease;
+}
+header .shop-cart .item .delete-icon:hover {
+	color: #d83030;
+	transform: scale(1.5);
+}
+header .shop-cart .summa {
+	float: left;
+	width: 100%;
+	font-weight: 600;
+	font-size: 20px;
+	margin-bottom: 20px;
+}
+header .presentation {
+	margin: 50px 0;
+	background: url('./img/presentation.jpg');
+	width: 100%;
+	height: 500px;
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-position: center center;
+	background-blend-mode: multiply;
+	background-color: #bcbcbc;
+	position: relative;
+}
+header .presentation::after {
+	content: 'Лучшие товары для вашего дома';
+	position: absolute;
+	top: 100px;
+	left: 50px;
+	width: 300px;
+	font-size: 40px;
+	font-weight: 600;
+	color: white;
+}
+header .presentation::before {
+	content: 'по низким ценам';
+	position: absolute;
+	top: 250px;
+	left: 50px;
+	width: 300px;
+	font-size: 15px;
+	font-weight: 300;
+	color: white;
+}
+.categories div {
+	display: inline-block;
+	background-color: #f2f2f2;
+	border-radius: 50px;
+	padding: 10px 25px;
+	margin-bottom: 25px;
+	margin-right: 15px;
+	cursor: pointer;
+	border: 1px solid transparent;
+	transition: all 500ms ease;
+}
+.categories div:hover {
+	border-color: silver;
+	transform: scale(1.1);
+}
+.full-item {
+	display: flex;
+	position: fixed;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	background: rgb(0, 0, 0, 0.8);
+	z-index: 5;
+	overflow: auto;
+}
+.full-item > div {
+	width: fit-content;
+	position: relative;
+	margin: auto;
+	padding: 40px 30px;
+	background: white;
+	border-radius: 10px;
+	max-width: 20%;
+	font-size: 25px;
+}
+.full-item img {
+	max-width: 100%;
+	height: auto;
+	display: block;
+}
+main {
+	display: flex;
+	width: 100%;
+	flex-wrap: wrap;
+	justify-content: space-between;
+}
+main .item {
+	width: 30%;
+	margin-bottom: 50px;
+	background-color: #f5f5f5;
+	overflow: hidden;
+	position: relative;
+}
+
+main .item img {
+	width: 100%;
+	border-radius: 10px 10px 0 0;
+	transition: transform 500ms ease;
+
+	padding-bottom: 20px;
+	cursor: pointer;
+}
+.full-item .item img:hover,
+main .item img:hover {
+	transform: scale(1.05);
+}
+main h2,
+main p,
+main b {
+	margin: 10px 20px;
+	color: #333;
+}
+main b,
+.full-item b {
+	color: #5fa36a;
+}
+main .add-to-card,
+.full-item .add-to-card {
+	position: absolute;
+	right: 20px;
+	bottom: 20px;
+	background: #ca5252;
+	width: 35px;
+	height: 35px;
+	text-align: center;
+	line-height: 35px;
+	color: #fff;
+	border-radius: 50%;
+	font-weight: 600;
+	cursor: pointer;
+	transition: transform 500ms ease;
+}
+main .add-to-card:hover,
+.full-item .add-to-card:hover {
+	transform: scale(1.2) translateY(-5px);
+}
+footer {
+	text-align: center;
+	margin-top: 100px;
 }
